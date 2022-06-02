@@ -1,0 +1,22 @@
+[package]
+edition = "2021"
+name = "fts-encrypted"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+uuids = ["uuid"]
+
+[dependencies]
+aes = "0.8.1"
+bitpacking = {version = "0.8.4", features = ["bitpacker4x"], default-features = false}
+blake2 = "0.10.4"
+rust-stemmers = {git = "https://github.com/riley-ashton/rust-stemmers", features = [], default-features = false}
+secrecy = "0.8.0"
+sled = "0.34.7"
+uuid = {version = "0.8.2", features = ["v4"], optional = true}
+zeroize = "1.5.4"
+
+[profile.test]
+opt-level = 3
